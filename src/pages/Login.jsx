@@ -8,17 +8,23 @@ export default function Login(){
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const navigate = useNavigate()
+    
 
     function handleLogin(e){
         e.preventDefault()
-        if(!email.includes('@') || password.length < 4){
+        if(!email.includes('@')){
             setError('E-mail inválido')
+            return
+        }
+        if(password.length < 4){
+            setError('Caracteres de senha insuficientes')
             return
         }
 
     localStorage.setItem('newTech_user', JSON.stringify({email, password}))
     navigate('/products')
     }
+    
     return(
         <AuthForm
         title="Entrar - NewTech"

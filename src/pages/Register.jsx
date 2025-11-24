@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import AuthForm from "../components/AuthForm";
 import AuthError from "../components/AuthError";
 
+
 export default function Register(){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
